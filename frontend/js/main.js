@@ -5,7 +5,7 @@ const getAllMusics = () => {
   let musicList = []
   fetch('http://localhost:3000')
     .then(res => res.json())
-    .then(data => data.forEach(music => musicList.push(`<p>${music.name}</p>`)))
+    .then(data => data.forEach(music => musicList.push(`<p onclick='removeMusic()'>${music.name}</p>`)))
     .then(() => app.innerHTML = (musicList.join('')))
     .catch(err => console.log(err))
 }
@@ -17,7 +17,11 @@ const getMusicByName = () => {
     headers: { name: musicName }
   })
     .then(res => res.json())
-    .then(data => data.forEach(music => musicList.push(`<p>${music.name}</p>`)))
+    .then(data => data.forEach(music => musicList.push(`<p onclick='removeMusic()'>${music.name}</p>`)))
     .then(() => app.innerHTML = (musicList.join('')))
     .catch(err => console.log(err))
+}
+
+const removeMusic = () => {
+  app.removeChild(event.target)
 }
