@@ -9,7 +9,7 @@ module.exports = {
   },
   getMusicByName(musicName) {
     app.get('/music', (req, res) => {
-      res.json(musicModel.filter(music => music.name.includes(musicName)))
+      res.json(musicModel.filter(music => music.name.toLowerCase().includes(musicName.toLowerCase())))
     })
   },
   addMusic() {
