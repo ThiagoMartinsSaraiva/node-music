@@ -7,9 +7,9 @@ module.exports = {
       res.json(musicModel)
     })
   },
-  getMusicByName(musicName) {
+  getMusicByName() {
     app.get('/music', (req, res) => {
-      res.json(musicModel.filter(music => music.name.toLowerCase().includes(musicName.toLowerCase())))
+      res.json(musicModel.filter(music => music.name.toLowerCase().includes(req.headers.name.toLowerCase())))
     })
   },
   addMusic() {
