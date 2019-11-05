@@ -10,5 +10,15 @@ module.exports = {
     app.get('/music', (req, res) => {
       res.send(`${musicName}`)
     })
+  },
+  addMusic() {
+    app.post('/music', (req, res) => {
+      res.send('Music added succefully!')
+    })
+  },
+  deleteMusic() {
+    app.delete('/music/:id', (req, res) => {
+      res.send('Music deletted succefully!')
+    })
   }
 }
