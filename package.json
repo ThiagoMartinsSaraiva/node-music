@@ -1,0 +1,11 @@
+{
+  "name": "node-music",
+  "version": "1.0.0",
+  "description": "this is a simple music CRUD",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Thiago Martins Saraiva",
+  "license": "MIT"
+}
