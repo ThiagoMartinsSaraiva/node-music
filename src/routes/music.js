@@ -1,14 +1,15 @@
 const app = require('../server')
+const musicModel = require('../models/music')
 
 module.exports = {
   get() {
     app.get('/', (req, res) => {
-      res.send('Welcome to the music list')
+      res.json(musicModel)
     })
   },
   getMusicByName(musicName) {
     app.get('/music', (req, res) => {
-      res.send(`${musicName}`)
+      res.json(musicModel.filter(music => music.name.includes(musicName)))
     })
   },
   addMusic() {
