@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
-
+const app = require('./src/server')
 const port = 3000 || process.env.PORT
+const musicRoutes = require('./src/routes/music')
 
-app.get('/', (req, res) => {
-  res.send('Welcome to my application')
-})
+musicRoutes.get()
+musicRoutes.getMusicByName("Drown")
+musicRoutes.addMusic()
+musicRoutes.deleteMusic()
 
 app.listen(port, console.log(`Server running on port ${port}`))
